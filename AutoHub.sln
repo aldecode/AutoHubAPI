@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoHub.DAL", "AutoHub.DAL\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoHub.BLL", "AutoHub.BLL\AutoHub.BLL.csproj", "{F920A5C8-BDA6-4C66-80EC-AE6F3FD5CEA9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoHub.Client", "AutoHub.Client\AutoHub.Client.csproj", "{9BF89C3E-72F2-401D-891D-F138EA2E3156}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{F920A5C8-BDA6-4C66-80EC-AE6F3FD5CEA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F920A5C8-BDA6-4C66-80EC-AE6F3FD5CEA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F920A5C8-BDA6-4C66-80EC-AE6F3FD5CEA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF89C3E-72F2-401D-891D-F138EA2E3156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF89C3E-72F2-401D-891D-F138EA2E3156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF89C3E-72F2-401D-891D-F138EA2E3156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF89C3E-72F2-401D-891D-F138EA2E3156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
