@@ -1,0 +1,15 @@
+.footer {
+  padding: rem(12px);
+  background-color: #001220;
+  &__heading {
+    width: 100%;
+    text-align: center;
+  }
+  
+  &__credentials {
+    width: 100%;
+    text-align: center;
+    color: var(--color-dark-paragraph);
+    font-size: rem(14px);
+  }
+}

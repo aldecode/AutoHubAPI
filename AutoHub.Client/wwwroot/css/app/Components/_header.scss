@@ -1,0 +1,39 @@
+.header {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  padding: 0;
+
+  .nav {
+    height: auto;
+    list-style-type: none;
+    text-align: center;
+    font-weight: 500;
+    display: inline-block;
+    margin: rem(7px) 0 0;
+    padding: 0;
+
+    li {
+      display: inline;
+      float: left;
+      border-radius: var(--radius-14);
+      margin: 0 rem(8px);
+      a {
+        color: var(--color-heading);
+        text-decoration: none;
+      }
+    }
+
+    &__item {
+      transition: all .07s ease;
+      padding: rem(8px) rem(24px);
+      
+      &:hover {
+        background-color: rgba(255,255,255, .1);
+        filter: brightness(1.2);
+      }
+    }
+  }
+
+}

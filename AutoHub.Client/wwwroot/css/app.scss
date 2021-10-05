@@ -1,0 +1,18 @@
+//Variables
+@import "variables/vars";
+@import "variables/funcs";
+@import "variables/media";
+
+//General
+@import "app/general";
+@import "app/typography";
+
+//Pages
+@import "app/Pages/index";
+
+//Components
+@import "app/Components/header";
+@import "app/Components/mainLayout";
+@import "app/Components/footer";
+@import "app/Components/jumbotron";
+

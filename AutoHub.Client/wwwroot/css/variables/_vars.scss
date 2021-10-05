@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+$baseSystemFontSize : 16px;
+
+:root {
+  //Font settings
+  --font-family: 'Poppins', sans-serif;
+  --font-base-size: 15px;
+  --font-mobile-size: 14px;
+  
+  //Color settings
+  --color-heading: #FCFCFC;;
+  --color-paragraph: #D6D6D6;
+  --color-dark-border: rgba(255, 255, 255, 0.125);
+  
+  //Border radius vars
+  --radius-128: 128px;
+  --radius-32: 32px;
+  --radius-20: 20px;
+  --radius-18: 18px;
+  --radius-16: 16px;
+  --radius-14: 14px;
+  --radius-12: 12px;
+  --radius-8: 8px;
+}
