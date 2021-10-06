@@ -8,7 +8,7 @@
   -moz-animation: fade-in 2s; /* Firefox */
   -webkit-animation: fade-in 2s; /* Safari and Chrome */
   -o-animation: fade-in 2s; /* Opera */
-  
+
   .nav {
     height: auto;
     list-style-type: none;
@@ -23,6 +23,7 @@
       float: left;
       border-radius: var(--radius-14);
       margin: 0 rem(8px);
+
       a {
         color: var(--color-heading);
         text-decoration: none;
@@ -30,11 +31,11 @@
     }
 
     &__item {
-      transition: all .07s ease;
+      transition: all 0.07s ease;
       padding: rem(8px) rem(24px);
-      
+
       &:hover {
-        background-color: rgba(255,255,255, .1);
+        background-color: rgba(255, 255, 255, 0.1);
         filter: brightness(1.2);
       }
     }

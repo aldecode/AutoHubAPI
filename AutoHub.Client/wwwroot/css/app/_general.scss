@@ -1,4 +1,4 @@
-body{
+body {
   background-image: url("../../images/bg-blob.svg");
   background-position: center top;
   background-repeat: no-repeat;
@@ -16,6 +16,6 @@ body{
   -webkit-backdrop-filter: blur(50px) saturate(150%);
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0;
 }
