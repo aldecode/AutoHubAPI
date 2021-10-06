@@ -15,3 +15,7 @@ body{
   backdrop-filter: blur(80px) saturate(150%);
   -webkit-backdrop-filter: blur(50px) saturate(150%);
 }
+
+::-webkit-scrollbar{
+  width: 0;
+}

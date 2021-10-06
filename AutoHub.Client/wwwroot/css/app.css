@@ -152,6 +152,10 @@ body {
   -webkit-backdrop-filter: blur(50px) saturate(150%);
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
 body {
   color: var(--color-paragraph);
   font-family: var(--font-family);
