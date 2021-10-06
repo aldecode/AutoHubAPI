@@ -1,72 +1,65 @@
 #app{
-  $r: 1.5em;
+  animation: fadein 1s ease-in-out;
+  -moz-animation: fade-in-out 1s ease-in-out; /* Firefox */
+  -webkit-animation: fade-in-out 1s ease-in-out; /* Safari and Chrome */
+  -o-animation: fade-in-out 1s ease-in-out; /* Opera */
+    // $color: #926def, #8c6ced, #876beb, #6565dd, #5f64db;
+  $color: #2d284e, #363160, #413a72, #4d4585, #4c4486;
 
-  @mixin position-center($text-align: center) {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    text-align: $text-align;
+  body {
+    overflow: hidden;
   }
-  
-  .loader-wrap {
-    display: grid;
-    place-content: center;
-    margin: 0;
-    min-height: 100vh;
-    background: #000000;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  $circle-size: rem(20px);
+  $circle-margin: rem(17px);
+
+  .circle {
+    width: $circle-size;
+    height: $circle-size;
+    border-radius: 50%;
+    margin: $circle-margin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:before {
-      grid-column: 1;
-      grid-row: 1;
-      transform: scale(.8);
-      background: linear-gradient(90deg, #fde6bd, #a1c5ab, #f4dd51, #d11e48, #632f53);
-      content: ''
+      content: "";
+      width: $circle-size;
+      height: $circle-size;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: scale 2s infinite
+      cubic-bezier(0, 0, 0.49, 1.02);
     }
   }
 
-  .loader {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-    padding: 6em;
-    background: inherit;
-    filter: blur(9px) contrast(18);
-    mix-blend-mode: multiply
-  }
-
-  .particle {
-    width: 0;
-    padding: $r;
-    border-radius: 50%;
-    background: #fff;
-
-    &:first-child, &:last-child { padding: .5*$r }
-
-    &:nth-child(odd) {
-      animation: pulse var(--t) ease-in-out var(--dt) infinite
-    }
-
-    &:nth-child(2n) {
-      transform: rotate(0deg) translate(2*$r);
-      animation: spin var(--t) linear infinite
-    }
-
-    &:nth-child(4n) {
-      animation-direction: reverse;
-      animation-duration: calc(1.2*var(--t))
+  @for $i from 1 through 5 {
+    .circle-#{$i} {
+      background-color: nth($color, $i);
+      &:before {
+        background-color: nth($color, $i);
+        animation-delay: 200ms * $i;
+      }
     }
   }
 
-  @keyframes pulse {
-    50% { transform: scale(1.8) }
-    70% { transform: scale(.6) }
-  }
-
-  @keyframes spin {
-    to { transform: rotate(1turn) translate(2*$r) }
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    50%, 75% {
+      transform: scale(2.5);
+    }
+    78%, 100% {
+      opacity: 0;
+    }
   }
 }

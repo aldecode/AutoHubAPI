@@ -7,3 +7,114 @@
   }
   @return $pixels / $context * 1rem;
 }
+
+//Animations
+@keyframes fade-in {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-moz-keyframes fade-in { /* Firefox */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-webkit-keyframes fade-in { /* Safari and Chrome */
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@-o-keyframes fade-in { /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+@-moz-keyframes fade-out { /* Firefox */
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+@-webkit-keyframes fade-out { /* Safari and Chrome */
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+@-o-keyframes fade-out { /* Opera */
+  from {
+    opacity:1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fade-in-out {
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+@-moz-keyframes fade-in-out { /* Firefox */
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+@-webkit-keyframes fade-in-out { /* Safari and Chrome */
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+@-o-keyframes fade-in-out { /* Opera */
+  0% {
+    opacity:0;
+  }
+  50% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}

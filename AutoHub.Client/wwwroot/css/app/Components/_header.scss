@@ -4,7 +4,11 @@
   height: auto;
   align-items: center;
   padding: 0;
-
+  animation: fade-in 2s;
+  -moz-animation: fade-in 2s; /* Firefox */
+  -webkit-animation: fade-in 2s; /* Safari and Chrome */
+  -o-animation: fade-in 2s; /* Opera */
+  
   .nav {
     height: auto;
     list-style-type: none;
