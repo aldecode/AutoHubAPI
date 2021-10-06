@@ -11,6 +11,19 @@ namespace AutoHub.DAL
         public DbSet<User> User { get; set; }
         public DbSet<Lot> Lot { get; set; }
         public DbSet<CarStatus> CarStatus { get; set; }
+        public DbSet<LotStatus> LotStatus { get; set; }
+        public DbSet<UserRole> UserRole { get; set; }
+
+        public AutoHubContext()
+        {
+            
+        }
+        
+        public AutoHubContext(DbContextOptions<AutoHubContext> options)
+           : base(options)
+        {
+            
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -5,6 +5,7 @@ using AutoHub.DAL.Interfaces;
 using AutoHub.DAL.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -28,12 +29,12 @@ namespace AutoHub.PL
 
             services.AddRouting();
 
+            services.AddDbContext<AutoHubContext>(
+               options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnectionString")));
+
             services.AddScoped<ICarService, CarService>();
             services.AddScoped<ILotService, LotService>();
-            
-            // Fix of error with DI and UoW, but dont understand how it works;)
-            services.AddSingleton<AutoHubContext>();
-            services.AddSingleton<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddSwaggerGen(c =>
             {
