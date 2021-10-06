@@ -1,0 +1,19 @@
+@*<div class="grid">
+    @foreach (var car in _cars)
+    {
+        <div class="card">
+            
+        </div>
+    }
+</div>
+
+@code {
+    private IEnumerable<Car> _cars;
+    
+    public class Car
+    {
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public string ImgUrl { get; set; }
+    }
+}*@
