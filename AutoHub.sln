@@ -18,7 +18,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoHub.BusinessLogic", "Au
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoHub.DataAccess", "AutoHub.DataAccess\AutoHub.DataAccess.csproj", "{46B564BE-38F8-4550-8BE9-05C042CEA6DB}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AutoHub.WebApi", "AutoHub.WebApi\AutoHub.WebApi.esproj", "{58863DB9-D129-458C-B088-EA1BFF9D7EC4}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AutoHub.WebClient", "AutoHub.WebClient\AutoHub.WebClient.esproj", "{58863DB9-D129-458C-B088-EA1BFF9D7EC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
