@@ -33,12 +33,18 @@ public class Startup
         services.AddSwagger();
         services.AddIdentity();
         services.AddAuth(Configuration);
+        services.AddCors();
         services.Configure<MailConfiguration>(Configuration.GetSection("MailConfiguration"));
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
+        app.UseCors(options => options
+            .WithOrigins("https://localhost:4200")
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();

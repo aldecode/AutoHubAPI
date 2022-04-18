@@ -1,5 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
+    <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+      <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    </PropertyGroup>
+
+    <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+      <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    </PropertyGroup>
+
     <PropertyGroup>
 	    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<TargetFramework>net6.0</TargetFramework>

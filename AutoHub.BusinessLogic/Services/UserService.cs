@@ -82,7 +82,7 @@ public class UserService : IUserService
 
         var signInResult = await _signManager.PasswordSignInAsync(userModel.Username, userModel.Password, userModel.RememberMe, false);
 
-        if (signInResult.Succeeded.Equals(true))
+        if (signInResult.Succeeded.Equals(false))
         {
             throw new LoginFailedException("Wrong password.");
         }
