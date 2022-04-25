@@ -1,22 +1,19 @@
+using AutoHub.BusinessLogic.Common;
 using AutoHub.BusinessLogic.DTOs.UserDTOs;
 using AutoHub.BusinessLogic.Interfaces;
+using AutoHub.BusinessLogic.Models;
 using AutoHub.DataAccess;
 using AutoHub.Domain.Constants;
-using AutoHub.Domain.Entities;
 using AutoHub.Domain.Entities.Identity;
 using AutoHub.Domain.Enums;
 using AutoHub.Domain.Exceptions;
 using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using AutoHub.BusinessLogic.Common;
-using AutoHub.BusinessLogic.Models;
 
 namespace AutoHub.BusinessLogic.Services;
 
@@ -120,8 +117,15 @@ public class UserService : IUserService
 
     public async Task Register(UserRegisterRequestDTO registerUserDTO)
     {
-        _ = await _userManager.FindByEmailAsync(registerUserDTO.Email) ?? throw new RegistrationFailedException($"User with E-Mail ({registerUserDTO.Email}) already exists.");
-        _ = await _userManager.FindByNameAsync(registerUserDTO.Username) ?? throw new RegistrationFailedException($"User with username ({registerUserDTO.Username}) already exists.");
+        if (_userManager.FindByEmailAsync(registerUserDTO.Email) is not null)
+        {
+            throw new RegistrationFailedException($"User with E-Mail ({registerUserDTO.Email}) already exists.");
+        }
+
+        if (_userManager.FindByNameAsync(registerUserDTO.Username) is not null)
+        {
+            throw new RegistrationFailedException($"User with username ({registerUserDTO.Username}) already exists.");
+        }
 
         var newUser = _mapper.Map<ApplicationUser>(registerUserDTO);
 
@@ -135,9 +139,9 @@ public class UserService : IUserService
             if (result.Succeeded.Equals(true))
             {
                 var confirmationCode = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
-                confirmationCode = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(confirmationCode));
+                confirmationCode = Base64Helper.Encode(confirmationCode);
 
-                await _userManager.ConfirmEmailAsync(newUser, WebEncoders.Base64UrlDecode(confirmationCode).ToString());
+                await _userManager.ConfirmEmailAsync(newUser, Base64Helper.Decode(confirmationCode));
 
                 await _emailService.SendEmail(new SendMailRequest
                 {
