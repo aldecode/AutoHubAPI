@@ -1,0 +1,30 @@
+﻿:host {
+  display: block;
+  width: 100%;
+  min-height: calc(100% - 64px);
+  overflow: hidden;
+}
+
+.container {
+  width: 500px;
+  height: 250px;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #e7dafc;
+}
+
+.wrapper {
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  margin-top: 5px;
+}
+
+.formContent {
+  margin-top: 5px;
+  width: 70%;
+}

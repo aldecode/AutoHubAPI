@@ -1,0 +1,20 @@
+﻿<vaadin-app-layout style="position: fixed">
+  <h1 slot="navbar" style="position: absolute; margin: auto 1rem;">AutoHub</h1>
+  <vaadin-tabs slot="navbar" style="margin: auto">
+    <vaadin-tab>
+      <a tabindex="-1" routerLink="/">About us</a>
+    </vaadin-tab>
+    <vaadin-tab>
+      <a tabindex="-1" routerLink="/lots">Lots</a>
+    </vaadin-tab>
+    <vaadin-tab>
+      <a tabindex="-1" routerLink="/">My Lots</a>
+    </vaadin-tab>
+    <vaadin-tab>
+      <a tabindex="-1" routerLink="/">My Bids</a>
+    </vaadin-tab>
+  </vaadin-tabs>
+
+  <vaadin-button slot="navbar" style="margin-right: 10px" routerLink="/login">Login</vaadin-button>
+  <vaadin-button slot="navbar" routerLink="/registration">Register</vaadin-button>
+</vaadin-app-layout>

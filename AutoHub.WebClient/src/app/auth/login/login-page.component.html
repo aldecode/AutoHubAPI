@@ -1,0 +1,51 @@
+﻿<!--<vaadin-form-layout class="container" .responsiveSteps="${this.responsiveSteps}">-->
+<!--  <vaadin-email-field-->
+<!--    label="Email address"-->
+<!--    name="email"-->
+<!--    value="julia.scheider@email.com"-->
+<!--    error-message="Please enter a valid email address"-->
+<!--    clear-button-visible>-->
+<!--  </vaadin-email-field>-->
+<!--  <vaadin-text-field label="First name"></vaadin-text-field>-->
+<!--  <vaadin-text-field label="Last name"></vaadin-text-field>-->
+<!--  &lt;!&ndash; Stretch the username field over 2 columns &ndash;&gt;-->
+<!--  <vaadin-text-field colspan="2" label="Username"></vaadin-text-field>-->
+<!--  <vaadin-password-field label="Password"> </vaadin-password-field>-->
+<!--  <vaadin-password-field label="Confirm password"> </vaadin-password-field>-->
+<!--</vaadin-form-layout>-->
+
+<div class="wrapper">
+  <mat-card class="container">
+    <mat-card-header style="justify-content: center;">
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="loginForm" class="form">
+      <mat-form-field name="loginFieldEmail" appearance="legacy" class="formContent">
+        <mat-label>Email</mat-label>
+        <input matInput id="emailAddress" type="email" formControlName="emailAddress"
+               class="login-form__input" autocomplete="email">
+        <mat-error *ngIf="!emailAddress.value && emailAddress.touched">
+          {{"Required field"}}
+        </mat-error>
+        <mat-error name="loginEmailError"
+                   *ngIf="emailAddress.touched && emailAddress.value && emailAddress.errors?.['email']">
+          {{"Invalid email address"}}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field name="loginFieldPassword" appearance="legacy" class="formContent">
+        <mat-label>Password</mat-label>
+        <input matInput id="password" [type]="showPass? 'text' : 'password'"
+               formControlName="password" class="login-form__input" autocomplete="current-password">
+        <mat-icon matSuffix name="loginShowPassword" class="show-password" (click)="toggleShowPass()">
+          {{showPass ? 'visibility' : 'visibility_off'}}
+        </mat-icon>
+        <mat-error name="loginPasswordError" *ngIf="!password.value && password.touched">
+          {{"Password required"}}
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <button mat-flat-button class="formContent"
+    (click)="validateForm()">Login</button>
+  </mat-card>
+</div>

@@ -28,7 +28,7 @@ public class Startup
             .AddFluentValidation(options => options.RegisterValidatorsFromAssembly(typeof(Startup).Assembly));
         services.AddAutoMapper(typeof(Startup).Assembly);
         services.AddRouting();
-        services.AddDbContext<AutoHubContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnectionString")));
+        services.AddDbContext<AutoHubContext>(options => options.UseSqlServer(Configuration.GetConnectionString("HostingConnectionString")));
         services.AddServices();
         services.AddSwagger();
         services.AddIdentity();
@@ -40,11 +40,6 @@ public class Startup
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
-        app.UseCors(options => options
-            .WithOrigins("https://localhost:4200")
-            .AllowAnyMethod()
-            .AllowAnyHeader());
-
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
